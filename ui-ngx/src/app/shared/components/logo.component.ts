@@ -23,7 +23,7 @@ import { Component } from '@angular/core';
 })
 export class LogoComponent {
 
-  logo = require('../../../assets/logo_title_white.svg').default;
+  logo = require('../../../assets/logoutb_blanco.png').default;
 
   gotoThingsboard(): void {
     window.open('https://thingsboard.io', '_blank');

@@ -46,7 +46,7 @@
               </button>
             </div>
             <div fxLayout="column" class="tb-action-button">
-              <button mat-raised-button color="accent" [disabled]="(isLoading$ | async)"
+              <button mat-raised-button style="background-color: #78b336" [disabled]="(isLoading$ | async)"
                       type="submit">{{ 'login.login' | translate }}</button>
             </div>
             <div class="oauth-container" fxLayout="column" fxLayoutGap="16px" *ngIf="oauth2Clients?.length">
