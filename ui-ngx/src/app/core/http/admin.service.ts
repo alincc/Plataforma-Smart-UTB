@@ -52,8 +52,4 @@ export class AdminService {
     return this.http.post<SecuritySettings>('/api/admin/securitySettings', securitySettings,
       defaultHttpOptionsFromConfig(config));
   }
-
-  public checkUpdates(config?: RequestConfig): Observable<UpdateMessage> {
-    return this.http.get<UpdateMessage>(`/api/admin/updates`, defaultHttpOptionsFromConfig(config));
-  }
 }

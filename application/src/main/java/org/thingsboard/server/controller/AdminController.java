@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.thingsboard.rule.engine.api.MailService;
 import org.thingsboard.server.common.data.AdminSettings;
-import org.thingsboard.server.common.data.UpdateMessage;
 import org.thingsboard.server.common.data.exception.ThingsboardException;
 import org.thingsboard.server.common.data.id.TenantId;
 import org.thingsboard.server.common.data.security.model.SecuritySettings;
@@ -35,7 +34,6 @@ import org.thingsboard.server.queue.util.TbCoreComponent;
 import org.thingsboard.server.service.security.permission.Operation;
 import org.thingsboard.server.service.security.permission.Resource;
 import org.thingsboard.server.service.security.system.SystemSecurityService;
-import org.thingsboard.server.service.update.UpdateService;
 
 @RestController
 @TbCoreComponent
@@ -51,8 +49,6 @@ public class AdminController extends BaseController {
     @Autowired
     private SystemSecurityService systemSecurityService;
 
-    @Autowired
-    private UpdateService updateService;
 
     @PreAuthorize("hasAuthority('SYS_ADMIN')")
     @RequestMapping(value = "/settings/{key}", method = RequestMethod.GET)
@@ -122,17 +118,6 @@ public class AdminController extends BaseController {
                 String email = getCurrentUser().getEmail();
                 mailService.sendTestMail(adminSettings.getJsonValue(), email);
             }
-        } catch (Exception e) {
-            throw handleException(e);
-        }
-    }
-
-    @PreAuthorize("hasAuthority('SYS_ADMIN')")
-    @RequestMapping(value = "/updates", method = RequestMethod.GET)
-    @ResponseBody
-    public UpdateMessage checkUpdates() throws ThingsboardException {
-        try {
-            return updateService.checkUpdates();
         } catch (Exception e) {
             throw handleException(e);
         }
