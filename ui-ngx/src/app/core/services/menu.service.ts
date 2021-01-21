@@ -191,22 +191,10 @@ export class MenuService {
         icon: 'supervisor_account'
       },
       {
-        name: 'asset.assets',
-        type: 'link',
-        path: '/assets',
-        icon: 'domain'
-      },
-      {
         name: 'device.devices',
         type: 'link',
         path: '/devices',
         icon: 'devices_other'
-      },
-      {
-        name: 'entity-view.entity-views',
-        type: 'link',
-        path: '/entityViews',
-        icon: 'view_quilt'
       },
       {
         name: 'widget.widget-library',
@@ -219,12 +207,6 @@ export class MenuService {
         type: 'link',
         path: '/dashboards',
         icon: 'dashboards'
-      },
-      {
-        name: 'audit-log.audit-logs',
-        type: 'link',
-        path: '/auditLogs',
-        icon: 'track_changes'
       }
     );
     return sections;
@@ -254,32 +236,12 @@ export class MenuService {
         ]
       },
       {
-        name: 'asset.management',
-        places: [
-          {
-            name: 'asset.assets',
-            icon: 'domain',
-            path: '/assets'
-          }
-        ]
-      },
-      {
         name: 'device.management',
         places: [
           {
             name: 'device.devices',
             icon: 'devices_other',
             path: '/devices'
-          }
-        ]
-      },
-      {
-        name: 'entity-view.management',
-        places: [
-          {
-            name: 'entity-view.entity-views',
-            icon: 'view_quilt',
-            path: '/entityViews'
           }
         ]
       },
@@ -298,16 +260,6 @@ export class MenuService {
           }
         ]
       },
-      {
-        name: 'audit-log.audit',
-        places: [
-          {
-            name: 'audit-log.audit-logs',
-            icon: 'track_changes',
-            path: '/auditLogs'
-          }
-        ]
-      }
     );
     return homeSections;
   }
@@ -322,22 +274,10 @@ export class MenuService {
         icon: 'home'
       },
       {
-        name: 'asset.assets',
-        type: 'link',
-        path: '/assets',
-        icon: 'domain'
-      },
-      {
         name: 'device.devices',
         type: 'link',
         path: '/devices',
         icon: 'devices_other'
-      },
-      {
-        name: 'entity-view.entity-views',
-        type: 'link',
-        path: '/entityViews',
-        icon: 'view_quilt'
       },
       {
         name: 'dashboard.dashboards',
@@ -352,32 +292,12 @@ export class MenuService {
   private buildCustomerUserHome(authUser: any): Array<HomeSection> {
     const homeSections: Array<HomeSection> = [
       {
-        name: 'asset.view-assets',
-        places: [
-          {
-            name: 'asset.assets',
-            icon: 'domain',
-            path: '/assets'
-          }
-        ]
-      },
-      {
         name: 'device.view-devices',
         places: [
           {
             name: 'device.devices',
             icon: 'devices_other',
             path: '/devices'
-          }
-        ]
-      },
-      {
-        name: 'entity-view.management',
-        places: [
-          {
-            name: 'entity-view.entity-views',
-            icon: 'view_quilt',
-            path: '/entityViews'
           }
         ]
       },
